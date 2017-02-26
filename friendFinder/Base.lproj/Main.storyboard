@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b3e-bG-Fnc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FriendFinder-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FriendTimeController" customModule="friendFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISC-ho-sdf">
+                                <rect key="frame" x="16" y="98" width="154" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready to find some friends?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZH-cV-Vu6">
+                                <rect key="frame" x="48" y="303" width="279" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aright! Let's go!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azH-2c-4BU">
+                                <rect key="frame" x="48" y="377" width="279" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Person" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgo-22-JVN">
+                                <rect key="frame" x="83" y="161" width="276" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egm-Ij-S3t">
+                                <rect key="frame" x="83" y="530" width="208" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Friend Time!"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="There are 0 people in your area!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4d-MA-J1M">
+                                <rect key="frame" x="48" y="229" width="311" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="ISC-ho-sdf" secondAttribute="leading" id="4XG-MD-nM4"/>
+                            <constraint firstItem="ISC-ho-sdf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="n10-OT-GhY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="FriendFinder" id="0Pz-Uw-JVa"/>
+                    <connections>
+                        <outlet property="loggedInPersonLabel" destination="vgo-22-JVN" id="rhw-ea-yyX"/>
+                        <outlet property="peopleInAreaLabel" destination="m4d-MA-J1M" id="UQc-8E-TbW"/>
+                        <segue destination="HSU-0d-Irz" kind="show" identifier="friendTime" id="hzP-yy-YLf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="872.79999999999995" y="89.505247376311857"/>
+        </scene>
+        <!--Friend Finder Controller-->
+        <scene sceneID="xZ5-fU-JJr">
+            <objects>
+                <viewController id="HSU-0d-Irz" customClass="FriendFinderController" customModule="friendFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cE1-B5-Gau"/>
+                        <viewControllerLayoutGuide type="bottom" id="lTE-M7-ITs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iHp-9m-sSj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="locationLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ur-bB-nQT">
+                                <rect key="frame" x="193" y="144" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yse-Yz-MKP">
+                                <rect key="frame" x="36" y="312" width="146.5" height="130"/>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="qlv-BR-vBa"/>
+                                </constraints>
+                                <state key="normal" title="Hobby"/>
+                                <connections>
+                                    <action selector="friendFilterButtonPressed:" destination="HSU-0d-Irz" eventType="touchUpInside" id="8DN-mp-4vz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReF-z7-RHt">
+                                <rect key="frame" x="192" y="312" width="146.5" height="130"/>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="eyw-Cd-DbX"/>
+                                </constraints>
+                                <state key="normal" title="New Users"/>
+                                <connections>
+                                    <action selector="friendFilterButtonPressed:" destination="HSU-0d-Irz" eventType="touchUpInside" id="WE2-fv-kXS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUJ-jW-cmm">
+                                <rect key="frame" x="37" y="462" width="145" height="130"/>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="Cyy-Xx-0B4"/>
+                                </constraints>
+                                <state key="normal" title="Age Range"/>
+                                <connections>
+                                    <action selector="friendFilterButtonPressed:" destination="HSU-0d-Irz" eventType="touchUpInside" id="mSX-g2-ySN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubh-fz-WQN">
+                                <rect key="frame" x="193.5" y="462" width="145" height="130"/>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="CeW-VD-1Fh"/>
+                                </constraints>
+                                <state key="normal" title="Good at Sports"/>
+                                <connections>
+                                    <action selector="friendFilterButtonPressed:" destination="HSU-0d-Irz" eventType="touchUpInside" id="2JK-zK-3hm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for friends in " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRd-bg-cjf">
+                                <rect key="frame" x="36" y="82" width="188.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ubh-fz-WQN" firstAttribute="leading" secondItem="fUJ-jW-cmm" secondAttribute="trailing" constant="11" id="2Fr-IO-fge"/>
+                            <constraint firstItem="fUJ-jW-cmm" firstAttribute="leading" secondItem="iHp-9m-sSj" secondAttribute="leadingMargin" constant="21" id="7s6-7u-Njb"/>
+                            <constraint firstItem="ReF-z7-RHt" firstAttribute="top" secondItem="5Ur-bB-nQT" secondAttribute="bottom" constant="147" id="Ecd-9k-keW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Ur-bB-nQT" secondAttribute="trailing" constant="64" id="H8Z-BG-gEU"/>
+                            <constraint firstItem="yse-Yz-MKP" firstAttribute="top" secondItem="tRd-bg-cjf" secondAttribute="bottom" constant="209" id="IYS-Cr-pHD"/>
+                            <constraint firstItem="ReF-z7-RHt" firstAttribute="width" secondItem="yse-Yz-MKP" secondAttribute="width" id="J2f-uc-Jni"/>
+                            <constraint firstItem="Ubh-fz-WQN" firstAttribute="width" secondItem="fUJ-jW-cmm" secondAttribute="width" id="MYo-Mo-jmD"/>
+                            <constraint firstItem="tRd-bg-cjf" firstAttribute="leading" secondItem="iHp-9m-sSj" secondAttribute="leadingMargin" constant="20" id="PQ2-ZV-EOA"/>
+                            <constraint firstItem="fUJ-jW-cmm" firstAttribute="top" secondItem="yse-Yz-MKP" secondAttribute="bottom" constant="20" id="PZL-ds-CFz"/>
+                            <constraint firstItem="tRd-bg-cjf" firstAttribute="top" secondItem="cE1-B5-Gau" secondAttribute="bottom" constant="62" id="X8l-ZC-bHL"/>
+                            <constraint firstItem="ReF-z7-RHt" firstAttribute="leading" secondItem="yse-Yz-MKP" secondAttribute="trailing" constant="10" id="YRG-7R-edD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ubh-fz-WQN" secondAttribute="trailing" constant="20" id="gCz-42-qBF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ReF-z7-RHt" secondAttribute="trailing" constant="20" id="ojd-Uf-eRf"/>
+                            <constraint firstItem="yse-Yz-MKP" firstAttribute="leading" secondItem="iHp-9m-sSj" secondAttribute="leadingMargin" constant="20" id="pKJ-GE-Gd6"/>
+                            <constraint firstItem="Ubh-fz-WQN" firstAttribute="top" secondItem="ReF-z7-RHt" secondAttribute="bottom" constant="20" id="qXO-H2-5yi"/>
+                            <constraint firstItem="5Ur-bB-nQT" firstAttribute="top" secondItem="cE1-B5-Gau" secondAttribute="bottom" constant="124" id="u2U-JQ-WNH"/>
+                            <constraint firstItem="5Ur-bB-nQT" firstAttribute="leading" secondItem="tRd-bg-cjf" secondAttribute="trailing" constant="-31.5" id="xYK-kB-SV9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="84Z-Us-Gm6" kind="show" identifier="findFriends" id="ugb-s1-JxS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AcA-S8-XgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1724" y="89.505247376311857"/>
+        </scene>
+        <!--Friend Table View Controller-->
+        <scene sceneID="rvu-mp-7D0">
+            <objects>
+                <tableViewController id="84Z-Us-Gm6" customClass="FriendTableViewController" customModule="friendFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Twc-uj-nNe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" id="pxf-dk-c12">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pxf-dk-c12" id="5ad-0d-15Y">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="84Z-Us-Gm6" id="XYj-Gf-LFJ"/>
+                            <outlet property="delegate" destination="84Z-Us-Gm6" id="etX-hh-V6f"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2l6-5M-SXT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2588" y="89.505247376311857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jrG-Ly-ocP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b3e-bG-Fnc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TJ6-RN-PfH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fIB-SR-iXb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4YC-0X-X3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66.400000000000006" y="89.505247376311857"/>
+        </scene>
+    </scenes>
+</document>
