@@ -18,6 +18,7 @@
 		C044312A1E63511C00A098A2 /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04431291E63511C00A098A2 /* FriendTableViewController.swift */; };
 		C04D1AA01E635498001BE071 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D1A9E1E635498001BE071 /* Person+CoreDataClass.swift */; };
 		C04D1AA11E635498001BE071 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D1A9F1E635498001BE071 /* Person+CoreDataProperties.swift */; };
+		C0F8DCD31E638DDB003700F4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C0F8DCD21E638DDB003700F4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C04431291E63511C00A098A2 /* FriendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendTableViewController.swift; path = ../FriendTableViewController.swift; sourceTree = "<group>"; };
 		C04D1A9E1E635498001BE071 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Person+CoreDataClass.swift"; path = "../Person+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C04D1A9F1E635498001BE071 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Person+CoreDataProperties.swift"; path = "../Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C0F8DCD21E638DDB003700F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DA220EA614EB2F7818AB5022 /* Pods-friendFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-friendFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-friendFinder/Pods-friendFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		FE0D28EBE51B09240247F38A /* Pods_friendFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_friendFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,6 +76,7 @@
 				C01F764F1E60F87600F9FE11 /* Products */,
 				9FE14721F9916EF05BAEA552 /* Pods */,
 				05FAFA04A96D963784BA6760 /* Frameworks */,
+				C0F8DCD21E638DDB003700F4 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -249,6 +252,7 @@
 				C04D1AA01E635498001BE071 /* Person+CoreDataClass.swift in Sources */,
 				C04431261E6350EF00A098A2 /* FriendTimeController.swift in Sources */,
 				C01F76521E60F87600F9FE11 /* AppDelegate.swift in Sources */,
+				C0F8DCD31E638DDB003700F4 /* README.md in Sources */,
 				C04431281E63510500A098A2 /* FriendFinderController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
