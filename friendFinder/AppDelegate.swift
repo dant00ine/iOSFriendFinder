@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // with this event handler the code will run upon startup of the application
@@ -39,28 +38,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             for i in 1...250 {
                 
                 let newPerson = Person(context: moc)
+                
                 newPerson.name = faker.name.firstName() + " " + faker.name.lastName()
+                
+                newPerson.age = 18 + Int(arc4random_uniform(90))
+                
                 let streetAdress = faker.address.streetAddress()
                 let city = faker.address.city()
                 let state = faker.address.stateAbbreviation()
                 let postCode = faker.address.postcode()
                 newPerson.address = streetAdress + " " + city + " " + state + " " + postCode
                 
+                let now = Date()
+                let units: Set<Calendar.Component> = [.hour, .day, .month, .year]
+                var components = Calendar.current.dateComponents(units, from: now)
+                let randomAmt = Int(arc4random_uniform(60))
+                let randomDaysAgo:Int = components.day! - randomAmt
+                components.setValue(randomDaysAgo, for: .day)
+                let randomTimeAgo = Calendar(identifier: .gregorian).date(from: components)!
+                newPerson.date_joined = randomTimeAgo
+                
                 switch i % 4 {
                 case 0:
-                    newPerson.hobby = ("Cycling")
+                    newPerson.hobby = "Cycling"
                     newPerson.likes_sports = true
                 case 1:
-                    newPerson.hobby = ("Cooking")
+                    newPerson.hobby = "Cooking"
                     newPerson.likes_sports = false
                 case 2:
-                    newPerson.hobby = ("MMORPGs")
+                    newPerson.hobby = "MMORPGs"
                     newPerson.likes_sports = false
                 case 3:
-                    newPerson.hobby = ("Drinking")
+                    newPerson.hobby = "Drinking"
                     newPerson.likes_sports = true
                 default:
-                    newPerson.hobby = ("MMORPGs")
+                    newPerson.hobby = "MMORPGs"
                     newPerson.likes_sports = false
                 }
                 

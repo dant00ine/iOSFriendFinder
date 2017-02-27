@@ -11,13 +11,19 @@ import CoreData
 
 class FriendTableViewController: UITableViewController {
     
+    let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     // filter for fetching the right people, passed from prev controller
     // people arr for storing -> tableView presentation
     var filter: String?
+    var loggedInPerson: Person?
+    var loggedInPersonState: String?
+    
     var people = [Person]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        people = fetchPeople(withFilter: filter!)
 
     }
 
@@ -38,23 +44,47 @@ class FriendTableViewController: UITableViewController {
         return people.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = people[indexPath.row].name!
 
         return cell
     }
     
-    func fetchPeople() {
-        let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    func fetchPeople(withFilter:String) -> [Person] {
         
         let friendRequest: NSFetchRequest<Person> = Person.fetchRequest()
+        var friendPredicate: NSPredicate?
+        let locationPredicate = NSPredicate(format: "address CONTAINS[c] %@", loggedInPersonState!)
         
-        let fetchedPeople: [Person] = try! moc.fetch(friendRequest)
+        switch withFilter {
+            case "the Same Hobby":
+                friendPredicate = NSPredicate(format: "hobby == %@", (loggedInPerson?.hobby)!)
+            case "Joined Recently":
+                friendPredicate = NSPredicate(format: "date_joined > %@", (loggedInPerson?.date_joined)! as NSDate)
+            case "a Similar Age":
+                let age = (loggedInPerson?.age)!
+                friendPredicate = NSPredicate(format: "(age >= %@) && (age <= %@)", argumentArray: [(age - 5), (age + 5)])
+            case "a Liking For Sports":
+                let likesSports = (loggedInPerson?.likes_sports)!
+                friendPredicate = NSPredicate(format: "likes_sports == %@", NSNumber(value: likesSports))
+        default:
+            print("ERROR!")
+        }
         
-        self.people = fetchedPeople
+        friendRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [friendPredicate!, locationPredicate])
+        
+        do {
+            let fetchedPeople: [Person] = try moc.fetch(friendRequest)
+            return fetchedPeople
+        } catch {
+            print(error)
+            // alert that no people could be found
+            return [Person]()
+        }
+        
+    
     }
 
 }

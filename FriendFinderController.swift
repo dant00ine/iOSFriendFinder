@@ -7,18 +7,11 @@
 //
 
 import UIKit
-//
-//class sortButton: UIButton {
-//    
-//    
-//    
-////    print(self.title)
-//    
-//}
 
 class FriendFinderController: UIViewController {
     
-    var thisPerson: Person?
+    var loggedInPerson: Person?
+    var loggedInPersonState: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +27,16 @@ class FriendFinderController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let filter = sender as! String
         
+        let vc = segue.destination as! FriendTableViewController
+        vc.filter = filter
+        vc.loggedInPerson = loggedInPerson
+        vc.loggedInPersonState = loggedInPersonState
+        
     }
     
     @IBAction func friendFilterButtonPressed(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "findFriends", sender: sender.title)
+        let buttonTitle = sender.currentTitle
+        performSegue(withIdentifier: "findFriends", sender: buttonTitle)
     }
 }

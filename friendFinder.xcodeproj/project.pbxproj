@@ -18,7 +18,8 @@
 		C044312A1E63511C00A098A2 /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04431291E63511C00A098A2 /* FriendTableViewController.swift */; };
 		C04D1AA01E635498001BE071 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D1A9E1E635498001BE071 /* Person+CoreDataClass.swift */; };
 		C04D1AA11E635498001BE071 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D1A9F1E635498001BE071 /* Person+CoreDataProperties.swift */; };
-		C0F8DCD31E638DDB003700F4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C0F8DCD21E638DDB003700F4 /* README.md */; };
+		C0F8DCD31E638DDB003700F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C0F8DCD21E638DDB003700F4 /* README.md */; };
+		C0F8DCDA1E639662003700F4 /* addressHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8DCD91E639662003700F4 /* addressHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C04D1A9E1E635498001BE071 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Person+CoreDataClass.swift"; path = "../Person+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C04D1A9F1E635498001BE071 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Person+CoreDataProperties.swift"; path = "../Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C0F8DCD21E638DDB003700F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C0F8DCD91E639662003700F4 /* addressHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addressHelpers.swift; sourceTree = "<group>"; };
 		DA220EA614EB2F7818AB5022 /* Pods-friendFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-friendFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-friendFinder/Pods-friendFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		FE0D28EBE51B09240247F38A /* Pods_friendFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_friendFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 				C01F76551E60F87600F9FE11 /* Main.storyboard */,
 				C04431241E6350B000A098A2 /* models */,
 				C04431231E6350AA00A098A2 /* controllers */,
+				C0F8DCD81E639640003700F4 /* helpers */,
 				C01F765B1E60F87600F9FE11 /* Assets.xcassets */,
 				C01F765D1E60F87600F9FE11 /* LaunchScreen.storyboard */,
 				C01F76601E60F87600F9FE11 /* Info.plist */,
@@ -120,6 +123,14 @@
 				C04D1A9F1E635498001BE071 /* Person+CoreDataProperties.swift */,
 			);
 			name = models;
+			sourceTree = "<group>";
+		};
+		C0F8DCD81E639640003700F4 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C0F8DCD91E639662003700F4 /* addressHelpers.swift */,
+			);
+			name = helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 				C01F765F1E60F87600F9FE11 /* LaunchScreen.storyboard in Resources */,
 				C01F765C1E60F87600F9FE11 /* Assets.xcassets in Resources */,
 				C01F76571E60F87600F9FE11 /* Main.storyboard in Resources */,
+				C0F8DCD31E638DDB003700F4 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +264,7 @@
 				C04D1AA01E635498001BE071 /* Person+CoreDataClass.swift in Sources */,
 				C04431261E6350EF00A098A2 /* FriendTimeController.swift in Sources */,
 				C01F76521E60F87600F9FE11 /* AppDelegate.swift in Sources */,
-				C0F8DCD31E638DDB003700F4 /* README.md in Sources */,
+				C0F8DCDA1E639662003700F4 /* addressHelpers.swift in Sources */,
 				C04431281E63510500A098A2 /* FriendFinderController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

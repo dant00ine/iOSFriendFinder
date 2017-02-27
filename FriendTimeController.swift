@@ -11,35 +11,67 @@ import CoreData
 
 class FriendTimeController: UIViewController {
     
+    
+    
+    // create reference to AppDelegate managed object context
     let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    // declare variables that will be used to pass data and compose interface
     var loggedInPerson: Person?
     var loggedInPersonAddressInfo: [[String: String]]?
     var loggedInPersonState: String?
     var peopleInAreaCount: Int?
     
+    // outlet labels for modifying view text
     @IBOutlet weak var peopleInAreaLabel: UILabel!
     @IBOutlet weak var loggedInPersonLabel: UILabel!
+    
+    
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // find random person from all available people in the database
         loggedInPerson = findRandomPersonToLogIn()
         loggedInPersonLabel.text = loggedInPerson?.name
         
-        loggedInPersonAddressInfo = getAddress(from: (loggedInPerson?.address)!)
+        
+        // parse address information and save state for later querying
+        loggedInPersonAddressInfo = AddressHelpers.getAddress(from: (loggedInPerson?.address)!)
         loggedInPersonState = (loggedInPersonAddressInfo?[0]["State"])!
         
+        
+        // generate count of eligible friends (people who live in same state)
         peopleInAreaCount = findPeopleCount(location: loggedInPerson!.address!)
         peopleInAreaLabel.text = "\(peopleInAreaCount!) other people in \(loggedInPersonState!)"
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    
+    
+    
+    // MARK: Segue relate code ::::::::::::::::::::::::::
+    
+    @IBAction func friendTimeButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "friendTime", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! FriendFinderController
+        vc.loggedInPerson = loggedInPerson
+        vc.loggedInPersonState = loggedInPersonState
+    }
+    
+    
+    
+    
+    
+    // MARK: Find info for interface (find person, find count of people in state)
+    
+    // find random person from all available people in database
     func findRandomPersonToLogIn() -> Person? {
         
         let friendRequest: NSFetchRequest<Person> = Person.fetchRequest()
@@ -58,6 +90,8 @@ class FriendTimeController: UIViewController {
         
     }
     
+    
+    // determine how many other people live in logged in user's state
     func findPeopleCount(location: String) -> Int {
         
         let fetchRequestForPeopleAtLocation: NSFetchRequest<Person> = Person.fetchRequest()
@@ -70,23 +104,6 @@ class FriendTimeController: UIViewController {
         let nearbyPeople = try? moc.count(for: fetchRequestForPeopleAtLocation)
         return nearbyPeople ?? 0
 
-    }
-    
-    func getAddress(from dataString: String) -> [[String: String]] {
-        let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.address.rawValue)
-        let matches = detector.matches(in: dataString, options: [], range: NSRange(location: 0, length: dataString.utf16.count))
-        
-        var resultsArray =  [[String: String]]()
-        // put matches into array of Strings
-        for match in matches {
-            if match.resultType == .address,
-                let components = match.addressComponents {
-                resultsArray.append(components)
-            } else {
-                print("no components found")
-            }
-        }
-        return resultsArray
     }
 
 }
