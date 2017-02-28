@@ -184,6 +184,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="locationLabel" destination="5Ur-bB-nQT" id="8ja-ie-ZbJ"/>
                         <segue destination="84Z-Us-Gm6" kind="show" identifier="findFriends" id="ugb-s1-JxS"/>
                     </connections>
                 </viewController>

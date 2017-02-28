@@ -55,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let randomAmt = Int(arc4random_uniform(60))
                 let randomDaysAgo:Int = components.day! - randomAmt
                 components.setValue(randomDaysAgo, for: .day)
+                components.day = randomDaysAgo
                 let randomTimeAgo = Calendar(identifier: .gregorian).date(from: components)!
                 newPerson.date_joined = randomTimeAgo
                 

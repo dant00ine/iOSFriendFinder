@@ -13,9 +13,11 @@ class FriendFinderController: UIViewController {
     var loggedInPerson: Person?
     var loggedInPersonState: String?
 
+    @IBOutlet weak var locationLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        locationLabel.text = loggedInPersonState!
         // Do any additional setup after loading the view.
     }
 

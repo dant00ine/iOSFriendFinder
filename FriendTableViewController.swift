@@ -57,6 +57,7 @@ class FriendTableViewController: UITableViewController {
         let friendRequest: NSFetchRequest<Person> = Person.fetchRequest()
         var friendPredicate: NSPredicate?
         let locationPredicate = NSPredicate(format: "address CONTAINS[c] %@", loggedInPersonState!)
+        let notMePredicate = NSPredicate(format: "name != %@", (loggedInPerson?.name)!)
         
         switch withFilter {
             case "the Same Hobby":
@@ -73,7 +74,9 @@ class FriendTableViewController: UITableViewController {
             print("ERROR!")
         }
         
-        friendRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [friendPredicate!, locationPredicate])
+        friendRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [friendPredicate!, locationPredicate, notMePredicate])
+        
+        
         
         do {
             let fetchedPeople: [Person] = try moc.fetch(friendRequest)
