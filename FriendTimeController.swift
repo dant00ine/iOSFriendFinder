@@ -40,7 +40,7 @@ class FriendTimeController: UIViewController {
         
         // parse address information and save state for later querying
         loggedInPersonAddressInfo = AddressHelpers.getAddress(from: (loggedInPerson?.address)!)
-        loggedInPersonState = (loggedInPersonAddressInfo?[0]["State"])!
+        loggedInPersonState = (loggedInPersonAddressInfo?[0]["State"])
         
         
         // generate count of eligible friends (people who live in same state)
