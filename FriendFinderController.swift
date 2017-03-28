@@ -10,25 +10,24 @@ import UIKit
 
 class FriendFinderController: UIViewController {
     
-    var loggedInPerson: Person?
-    var loggedInPersonState: String?
-
+    
+    // set up outlets and variables
     @IBOutlet weak var locationLabel: UILabel!
     
+    var loggedInPerson: Person?
+    var loggedInPersonState: String?
+    
+    
+    // view controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         locationLabel.text = loggedInPersonState!
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let filter = sender as? String
         
+        // pass data to construct filter for tableView query
         let vc = segue.destination as? FriendTableViewController
         vc?.filter = filter
         vc?.loggedInPerson = loggedInPerson
@@ -36,6 +35,8 @@ class FriendFinderController: UIViewController {
         
     }
     
+    
+    // action outlets
     @IBAction func friendFilterButtonPressed(_ sender: UIButton) {
         
         let buttonTitle = sender.currentTitle

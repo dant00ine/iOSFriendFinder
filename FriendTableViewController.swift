@@ -11,26 +11,29 @@ import CoreData
 
 class FriendTableViewController: UITableViewController {
     
-    let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    // filter for fetching the right people, passed from prev controller
-    // people arr for storing -> tableView presentation
+    // declare variables
     var filter: String?
     var loggedInPerson: Person?
     var loggedInPersonState: String?
     
-    var people = [Person]()
     
+    // prepare for fetching people data
+    var people = [Person]()
+    let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    
+    
+    
+    // view lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        // call filter function with correct filter
         people = fetchPeople(withFilter: filter ?? "the Same Hobby")
 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
 
     // MARK: - Table view data source
 
@@ -52,6 +55,9 @@ class FriendTableViewController: UITableViewController {
         return cell
     }
     
+    
+    
+    // fetch the correct people based on filter
     func fetchPeople(withFilter:String) -> [Person] {
         
         let friendRequest: NSFetchRequest<Person> = Person.fetchRequest()
