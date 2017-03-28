@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let moc = persistentContainer.viewContext
         let defaults = UserDefaults.standard
         
+        // print(defaults.value(forKey: "GeneratedPeople"))
+        
         // we only want to generate data if it hasn't been generated before (helper function defined below)
         if !keyIsPresentInUserDefaults(key: "GeneratedPeople") {
             

@@ -23,7 +23,7 @@ class FriendTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        people = fetchPeople(withFilter: filter!)
+        people = fetchPeople(withFilter: filter ?? "the Same Hobby")
 
     }
 
@@ -47,7 +47,7 @@ class FriendTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath)
 
-        cell.textLabel?.text = people[indexPath.row].name!
+        cell.textLabel?.text = people[indexPath.row].name
 
         return cell
     }

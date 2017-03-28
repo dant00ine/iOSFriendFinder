@@ -19,7 +19,7 @@ extension Person {
     @NSManaged public var address: String?
     @NSManaged public var hobby: String?
     @NSManaged public var likes_sports: Bool
-    @NSManaged public var name: String?
+    @NSManaged public var name: String
     @NSManaged public var date_joined: Date
     @NSManaged public var age: Int
 

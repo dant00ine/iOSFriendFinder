@@ -27,12 +27,12 @@ class FriendFinderController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let filter = sender as! String
+        let filter = sender as? String
         
-        let vc = segue.destination as! FriendTableViewController
-        vc.filter = filter
-        vc.loggedInPerson = loggedInPerson
-        vc.loggedInPersonState = loggedInPersonState
+        let vc = segue.destination as? FriendTableViewController
+        vc?.filter = filter
+        vc?.loggedInPerson = loggedInPerson
+        vc?.loggedInPersonState = loggedInPersonState
         
     }
     
