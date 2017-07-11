@@ -21,7 +21,7 @@ class FriendFinderController: UIViewController {
     // view controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationLabel.text = loggedInPersonState!
+        locationLabel.text = loggedInPersonState ?? "No state T_T"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

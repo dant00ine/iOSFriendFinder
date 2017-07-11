@@ -39,13 +39,15 @@ class FriendTimeController: UIViewController {
         
         
         // parse address information and save state for later querying
-        loggedInPersonAddressInfo = AddressHelpers.getAddress(from: (loggedInPerson?.address)!)
-        loggedInPersonState = (loggedInPersonAddressInfo?[0]["State"])!
+        if let realLoggedInPerson = loggedInPerson {
+            loggedInPersonAddressInfo = AddressHelpers.getAddress(from: (realLoggedInPerson.address)!)
+            loggedInPersonState = (loggedInPersonAddressInfo?[0]["State"])!
+            
+            // generate count of eligible friends (people who live in same state)
+            peopleInAreaCount = findPeopleCount(location: loggedInPerson!.address!)
+            peopleInAreaLabel.text = "\(peopleInAreaCount!) other people in \(loggedInPersonState!)"
+        }
         
-        
-        // generate count of eligible friends (people who live in same state)
-        peopleInAreaCount = findPeopleCount(location: loggedInPerson!.address!)
-        peopleInAreaLabel.text = "\(peopleInAreaCount!) other people in \(loggedInPersonState!)"
         
     }
     
@@ -69,41 +71,27 @@ class FriendTimeController: UIViewController {
     
     
     
-    // MARK: Find info for interface (find person, find count of people in state)
-    
-    // find random person from all available people in database
-    func findRandomPersonToLogIn() -> Person? {
-        
-        let friendRequest: NSFetchRequest<Person> = Person.fetchRequest()
-        
-        do {
-            let fetchedPeople: [Person] = try moc.fetch(friendRequest)
-            let randomIndex = Int(arc4random_uniform(UInt32(fetchedPeople.count)))
-            let chosenOne = fetchedPeople[randomIndex]
-            
-            return chosenOne
-            
-        } catch {
-            print(error)
-            return nil
-        }
-        
-    }
-    
+    // MARK: Challenge - find info for interface (find person, find count of people in state)
     
     // determine how many other people live in logged in user's state
     func findPeopleCount(location: String) -> Int {
         
-        let fetchRequestForPeopleAtLocation: NSFetchRequest<Person> = Person.fetchRequest()
+        // hint -- check out countForFetchRequest
         
-        let statePredicate = NSPredicate(format: "%K CONTAINS[c] %@", "address", loggedInPersonState!)
-        fetchRequestForPeopleAtLocation.predicate = statePredicate
+        return -1
         
-        // results will be an optional (failed try results in nil value)
-        // after getting results, we either return count or 0
-        let nearbyPeople = try? moc.count(for: fetchRequestForPeopleAtLocation)
-        return nearbyPeople ?? 0
-
     }
+    
+    // find random person from all available people in database
+    func findRandomPersonToLogIn() -> Person? {
+        
+        // log in user as one random person
+        
+        return nil
+        
+    }
+    
+    
+    
 
 }

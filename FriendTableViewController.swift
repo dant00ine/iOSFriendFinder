@@ -62,25 +62,27 @@ class FriendTableViewController: UITableViewController {
         
         let friendRequest: NSFetchRequest<Person> = Person.fetchRequest()
         var friendPredicate: NSPredicate?
-        let locationPredicate = NSPredicate(format: "address CONTAINS[c] %@", loggedInPersonState!)
-        let notMePredicate = NSPredicate(format: "name != %@", (loggedInPerson?.name)!)
+        let locationPredicate = NSPredicate(format: "address CONTAINS[c] %@", loggedInPersonState ?? "WA")
+        let notMePredicate = NSPredicate(format: "name != %@", (loggedInPerson?.name) ?? "no name")
         
         switch withFilter {
             case "the Same Hobby":
-                friendPredicate = NSPredicate(format: "hobby == %@", (loggedInPerson?.hobby)!)
+                // do nothing
+                break
             case "Joined Recently":
-                friendPredicate = NSPredicate(format: "date_joined > %@", (loggedInPerson?.date_joined)! as NSDate)
+                // implement logic here
+                break
             case "a Similar Age":
-                let age = (loggedInPerson?.age)!
-                friendPredicate = NSPredicate(format: "(age >= %@) && (age <= %@)", argumentArray: [(age - 5), (age + 5)])
+                // how will you find friends?
+                break
             case "a Liking For Sports":
-                let likesSports = (loggedInPerson?.likes_sports)!
-                friendPredicate = NSPredicate(format: "likes_sports == %@", NSNumber(value: likesSports))
+                // with no friendPredicate?
+                break
         default:
             print("ERROR!")
         }
         
-        friendRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [friendPredicate!, locationPredicate, notMePredicate])
+        friendRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [locationPredicate, notMePredicate])
         
         
         
